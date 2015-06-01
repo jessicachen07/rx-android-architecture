@@ -3,7 +3,7 @@ package com.tehmou.rxbookapp.data.stores;
 import android.content.ContentResolver;
 import android.net.Uri;
 
-import com.tehmou.rxbookapp.data.base.store.ContentProviderStoreBase;
+import com.tehmou.rxandroidarchitecture.store.ContentProviderStoreBase;
 import com.tehmou.rxbookapp.data.provider.UserSettingsContract;
 import com.tehmou.rxbookapp.pojo.UserSettings;
 

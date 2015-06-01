@@ -1,4 +1,4 @@
-package com.tehmou.rxbookapp.data.base.contract;
+package com.tehmou.rxandroidarchitecture.contract;
 
 import android.database.Cursor;
 

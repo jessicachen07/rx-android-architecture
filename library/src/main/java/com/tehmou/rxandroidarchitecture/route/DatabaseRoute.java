@@ -1,4 +1,4 @@
-package com.tehmou.rxbookapp.data.base.route;
+package com.tehmou.rxandroidarchitecture.route;
 
 import android.net.Uri;
 

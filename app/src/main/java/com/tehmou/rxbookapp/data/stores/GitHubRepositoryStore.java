@@ -1,6 +1,6 @@
 package com.tehmou.rxbookapp.data.stores;
 
-import com.tehmou.rxbookapp.data.base.store.ContentProviderStoreBase;
+import com.tehmou.rxandroidarchitecture.store.ContentProviderStoreBase;
 import com.tehmou.rxbookapp.data.provider.GitHubRepositoryContract;
 import com.tehmou.rxbookapp.pojo.GitHubRepository;
 

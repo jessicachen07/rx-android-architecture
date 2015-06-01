@@ -1,4 +1,4 @@
-package com.tehmou.rxbookapp.data.base.provider;
+package com.tehmou.rxandroidarchitecture.provider;
 
 import android.content.Context;
 import android.content.UriMatcher;
@@ -6,8 +6,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
 
-import com.tehmou.rxbookapp.data.base.contract.DatabaseContract;
-import com.tehmou.rxbookapp.data.base.route.DatabaseRoute;
+import com.tehmou.rxandroidarchitecture.contract.DatabaseContract;
+import com.tehmou.rxandroidarchitecture.route.DatabaseRoute;
 
 import java.util.ArrayList;
 import java.util.List;

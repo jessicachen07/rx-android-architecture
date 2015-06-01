@@ -1,7 +1,7 @@
 package com.tehmou.rxbookapp.data.provider;
 
-import com.tehmou.rxbookapp.data.base.contract.DatabaseContract;
-import com.tehmou.rxbookapp.data.base.provider.ContractContentProviderBase;
+import com.tehmou.rxandroidarchitecture.contract.DatabaseContract;
+import com.tehmou.rxandroidarchitecture.provider.ContractContentProviderBase;
 
 /**
  * Created by ttuo on 22/03/15.

@@ -67,6 +67,7 @@ dependencies {
         exclude group: 'com.squareup.okhttp', module: 'okhttp'
     }
     compile 'com.squareup.okhttp:okhttp:2.0.0'
+    compile project(':library')
 
     // Unit test build
     testCompile 'junit:junit:4.12'

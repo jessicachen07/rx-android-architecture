@@ -1,8 +1,7 @@
-package com.tehmou.rxbookapp.data.base.contract;
+package com.tehmou.rxandroidarchitecture.contract;
 
 import android.content.ContentValues;
 import android.database.Cursor;
-import android.net.Uri;
 
 /**
  * Created by ttuo on 13/01/15.

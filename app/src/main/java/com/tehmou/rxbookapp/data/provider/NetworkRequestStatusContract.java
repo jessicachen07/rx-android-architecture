@@ -1,12 +1,11 @@
 package com.tehmou.rxbookapp.data.provider;
 
 import android.content.ContentValues;
-import android.database.Cursor;
 import android.net.Uri;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.tehmou.rxbookapp.data.base.contract.SerializedJsonContract;
+import com.tehmou.rxandroidarchitecture.contract.SerializedJsonContract;
 import com.tehmou.rxbookapp.pojo.NetworkRequestStatus;
 
 import java.lang.reflect.Type;

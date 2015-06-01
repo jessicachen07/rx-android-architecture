@@ -5,7 +5,7 @@ import android.net.Uri;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.tehmou.rxbookapp.data.base.contract.SerializedJsonContract;
+import com.tehmou.rxandroidarchitecture.contract.SerializedJsonContract;
 import com.tehmou.rxbookapp.pojo.GitHubRepositorySearch;
 
 import java.lang.reflect.Type;

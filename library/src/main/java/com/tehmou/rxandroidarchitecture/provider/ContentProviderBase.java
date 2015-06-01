@@ -1,4 +1,4 @@
-package com.tehmou.rxbookapp.data.base.provider;
+package com.tehmou.rxandroidarchitecture.provider;
 
 import android.content.ContentProvider;
 import android.content.ContentValues;

@@ -1,4 +1,4 @@
-package com.tehmou.rxbookapp.data.base.store;
+package com.tehmou.rxandroidarchitecture.store;
 
 import android.content.ContentResolver;
 import android.content.ContentValues;
@@ -7,14 +7,11 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.os.Looper;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
-import com.tehmou.rxbookapp.data.base.contract.DatabaseContract;
+import com.tehmou.rxandroidarchitecture.contract.DatabaseContract;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
