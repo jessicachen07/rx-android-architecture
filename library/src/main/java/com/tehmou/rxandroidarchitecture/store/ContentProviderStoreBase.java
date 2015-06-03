@@ -12,6 +12,8 @@ import android.util.Log;
 
 import com.tehmou.rxandroidarchitecture.contract.DatabaseContract;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -100,17 +102,28 @@ abstract public class ContentProviderStoreBase<T, U> {
     }
 
     protected T query(Uri uri) {
+        List<T> list = queryList(uri);
+        return list.size() > 0 ? list.get(0) : null;
+    }
+
+    protected List<T> queryList(Uri uri) {
         Cursor cursor = contentResolver.query(uri,
                 databaseContract.getProjection(), null, null, null);
-        T value = null;
+        List<T> list = new ArrayList<>();
+
         if (cursor != null) {
-            value = databaseContract.read(cursor);
+            if (cursor.moveToFirst()) {
+                list.add(databaseContract.read(cursor));
+            }
+            while (cursor.moveToNext()) {
+                list.add(databaseContract.read(cursor));
+            }
             cursor.close();
         }
-        if (value == null) {
-            Log.v(TAG, "Could not find with id: " + uri);
+        if (list.size() == 0) {
+            Log.v(TAG, "Could not find with uri: " + uri);
         }
-        return value;
+        return list;
     }
 
     protected ContentValues getContentValuesForItem(T item) {

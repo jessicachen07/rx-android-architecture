@@ -38,10 +38,7 @@ abstract public class SerializedJsonContract<T> implements DatabaseContract<T> {
 
     @Override
     public T read(Cursor cursor) {
-        if (cursor.moveToFirst()) {
-            final String json = cursor.getString(cursor.getColumnIndex(SerializedJsonContract.JSON));
-            return new Gson().fromJson(json, getType());
-        }
-        return null;
+        final String json = cursor.getString(cursor.getColumnIndex(SerializedJsonContract.JSON));
+        return new Gson().fromJson(json, getType());
     }
 }
