@@ -93,9 +93,6 @@ abstract public class ContractContentProviderBase extends ContentProviderBase {
     }
 
     protected DatabaseRoute getDatabaseRouteForMatch(final int match) {
-        if (match == -1) {
-            throw new IllegalArgumentException("Unknown URI");
-        }
         return databaseRoutes.get(match);
     }
 

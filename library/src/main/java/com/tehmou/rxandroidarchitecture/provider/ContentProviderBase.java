@@ -35,7 +35,7 @@ abstract public class ContentProviderBase extends ContentProvider {
 
     @Override
     public int delete(Uri uri, String selection, String[] selectionArgs) {
-        final int match = URI_MATCHER.match(uri);
+        final int match = getUriMatch(uri);
         String tableName = getTableName(match);
         String where = getWhere(match, uri);
         int count = db.delete(tableName, where, selectionArgs);
@@ -48,7 +48,7 @@ abstract public class ContentProviderBase extends ContentProvider {
     @Override
     public Uri insert(Uri uri, ContentValues values) {
         SQLiteDatabase db = databaseHelper.getWritableDatabase();
-        final int match = URI_MATCHER.match(uri);
+        final int match = getUriMatch(uri);
         String tableName = getTableName(match);
         db.insertWithOnConflict(tableName,
                 null, values, SQLiteDatabase.CONFLICT_REPLACE);
@@ -62,7 +62,7 @@ abstract public class ContentProviderBase extends ContentProvider {
                         String sortOrder) {
         SQLiteDatabase db = databaseHelper.getReadableDatabase();
         SQLiteQueryBuilder builder = new SQLiteQueryBuilder();
-        final int match = URI_MATCHER.match(uri);
+        final int match = getUriMatch(uri);
         String tableName = getTableName(match);
         String where = getWhere(match, uri);
 
@@ -95,7 +95,7 @@ abstract public class ContentProviderBase extends ContentProvider {
         }
         SQLiteDatabase db = databaseHelper.getWritableDatabase();
 
-        final int match = URI_MATCHER.match(uri);
+        final int match = getUriMatch(uri);
         String tableName = getTableName(match);
         String where = getWhere(match, uri);
 
@@ -106,10 +106,18 @@ abstract public class ContentProviderBase extends ContentProvider {
         return count;
     }
 
-    abstract protected String getWhere(final int match, Uri uri);
-    abstract protected String getTableName(final int match);
-    abstract protected String getDefaultSortOrder(final int match);
-    abstract protected SQLiteOpenHelper createDatabaseHelper(final Context context);
-    abstract protected void createUriMatcher();
-    abstract protected void notifyChange(final int match, Uri uri);
+    private int getUriMatch(Uri uri) {
+        final int match = URI_MATCHER.match(uri);
+        if (match == -1) {
+            throw new IllegalArgumentException("Unknown URI: " + uri);
+        }
+        return match;
+    }
+
+    protected abstract String getWhere(final int match, Uri uri);
+    protected abstract String getTableName(final int match);
+    protected abstract String getDefaultSortOrder(final int match);
+    protected abstract SQLiteOpenHelper createDatabaseHelper(final Context context);
+    protected abstract void createUriMatcher();
+    protected abstract void notifyChange(final int match, Uri uri);
 }
